@@ -9,7 +9,7 @@ export class AppComponent
 {
   title = 'Relation';
 
-  public Data: any;
+ // public Data: any;
 
-  public Message = "Hello From Parent";
+  public Message = "Hello From Parent 2";
 }
