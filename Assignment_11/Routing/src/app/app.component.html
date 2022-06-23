@@ -1,0 +1,13 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink routerLink="/TechnolgyDetails">Technologies</a>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink routerLink="/BookDetails">Book</a>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<h3 style="text-align: center;">Inside App Component</h3>
+<router-outlet></router-outlet>

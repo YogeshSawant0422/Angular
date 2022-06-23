@@ -1,0 +1,7 @@
+.nav-tabs{
+  background-color: #ccc;
+}
+li>a{
+  font-size: 20px;
+  font-weight: bold;
+}
