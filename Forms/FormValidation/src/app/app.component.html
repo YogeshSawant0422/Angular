@@ -4,12 +4,15 @@
   <form [formGroup] = "MarvellousForm">
   <div class="form-group">
     <label>User Name </label>
-    <input type="text" class="form-control" formControlName="username">
+    <!--Use class binding for validation-->
+    <input [class.is-invalid] = "MarvellousForm.get('username')?.invalid" type="text" class="form-control" formControlName="username">
+    <small [class.d-none]="MarvellousForm.get('username')?.valid" class="text-danger">Username is required</small>
   </div>
   
   <div class="form-group">
     <label>Password </label>
-    <input type="password" class="form-control" formControlName="passowrd">
+    <input [class.is-invalid] = "MarvellousForm.get('passowrd')?.invalid && MarvellousForm.get('passowrd')?.touched" type="password" class="form-control" formControlName="passowrd">
+    <small [class.d-none]="MarvellousForm.get('passowrd')?.valid || MarvellousForm.get('passowrd')?.untouched" class="text-danger">Password is required</small>
   </div>
   
   <div class="form-group">

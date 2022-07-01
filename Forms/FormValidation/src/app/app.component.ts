@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 // import classes which are required for reactive forms
-import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms'
+import {FormBuilder,FormGroup,Validators, FormControl, MinLengthValidator} from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -14,15 +14,14 @@ export class AppComponent
   // Inject FormBuilder service
   constructor(public fbobj : FormBuilder)
   {
-
-
   }
 
   MarvellousForm = this.fbobj.group(
     {
-      username :['Piyush'],
-      passowrd : ['abcd'],
-      ConfirmPass : ['abcd'],
+      // Add Multiple validations
+      username :['', [Validators.required, Validators.minLength(5)] ],
+      passowrd : ['',Validators.required],
+      ConfirmPass : [''],
       MarvellousClass : this.fbobj.group(
         {
           batch :['Python'],
@@ -31,23 +30,7 @@ export class AppComponent
       )
     }
   );
-  /*
-  MarvellousForm = new FormGroup(
-    {
-      username : new FormControl('Piyush'),
-      passowrd : new FormControl(''),
-      ConfirmPass : new FormControl(''),
-      // Add new nes
-      MarvellousClass : new FormGroup(
-        {
-          batch : new FormControl('Python'),
-          fees : new FormControl('5000')
-        }
-      )
-    }
-
-  );*/
-
+  
   // Method to set FormControl fields through program
   SetData()
   {

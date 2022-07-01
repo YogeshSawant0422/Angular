@@ -1,0 +1,129 @@
+<!-- Form Header Start -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+        <h1 [style.color]='"#E75480"'>Contact Our</h1>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-5">
+          <h1>Customer Support Center</h1>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+      <div class="col-md-2">
+        <img [src] ="ImagePath" alt="Laptop" height="100px" width="200px" style="margin:10px;">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+         <h3>Contact Information</h3>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+    <div class="row" style="padding-bottom:10px;">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+        <small>Please Fill Out Your Contact Information Below</small>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Form Header End -->
+
+<!-- Form Start -->
+
+<form [formGroup]="profileForm">
+  <!-- <label class="form-label">Name<span [style.color]='"red"'>*</span></label> -->
+  <div class="row">
+
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-4">
+      <small [class.d-none]="profileForm.get('firstName')?.valid" class="text-danger">First Name Is Required</small>
+      <input type="text" [class.is-invalid] = "profileForm.get('firstName')?.invalid" class="form-control" id="validationCustom01" placeholder="First Name" formControlName="firstName" pattern="[a-zA-Z ]*">
+      <label for="validationCustom01" class="form-label">First name</label>
+    </div>
+    <div class="col-md-4">
+      <small [class.d-none]="profileForm.get('lastName')?.valid" class="text-danger">Last Name Is Required</small>
+      <input type="text" [class.is-invalid] = "profileForm.get('lastName')?.invalid" class="form-control" id="validationCustom02" placeholder="Last Name" formControlName="lastName" pattern="[a-zA-Z ]*">
+      <label for="validationCustom02" class="form-label">Last name</label>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+  <div class="row" style="padding-bottom:10px;">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-8">
+      <label for="exampleFormControlInput1" class="form-label">Email address<span [style.color]='"red"'>*</span></label>
+      <input type="email"  [class.is-invalid] = "profileForm.get('mail')?.invalid" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="mail" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <small [class.d-none]="profileForm.get('mail')?.valid" class="text-danger">Email Is Required</small>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+  <div class="row" style="padding-bottom:10px;">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-8">
+      <label for="exampleFormControlInput2" class="form-label">Phone<span [style.color]='"red"'>*</span></label>
+      <input type="tel" class="form-control" [class.is-invalid] = "profileForm.get('MobNo')?.invalid" id="exampleFormControlInput2" placeholder="Mobile No" formControlName="MobNo" pattern="^\d+$">
+      <small [class.d-none]="profileForm.get('MobNo')?.valid" class="text-danger">Mobile Number Should Be 10 Digit</small>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+  <div class="row" style="padding-bottom:10px;">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-8">
+      <label for="exampleFormControlTextarea1" class="form-label">Address<span [style.color]='"red"'>*</span></label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+  <div class="row" style="padding-bottom:10px;">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-success">Submit Form</button>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+</form>
+
+<!-- Form End -->
