@@ -21,7 +21,8 @@ export class AppComponent implements OnInit
     firstName: ['', [Validators.required]],
     lastName: ['', [Validators.required]],
     MobNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-    mail:['',Validators.required]
+    mail: ['', Validators.required],
+    address:['',Validators.required]
   }
   );
 
